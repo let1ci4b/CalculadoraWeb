@@ -1,92 +1,141 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=0.8">
-    <title>MonkeyMath</title>
-    <script src="calculadora.js"></script>
-    <link href="main.css" type="text/css" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400&display=swap" rel="stylesheet">
-</head>
-<body>
-    <section class="header-site">
-        <div class="container">
-            <div class="header-text" style="text-align: center;">
-                <h1 style="font-size: 80px; margin-bottom: 40px;"><br>MONKEY MATH</h1>
-                <p style="font-size: 30px;">VAMOS CALCULAR!</p>
-            </div>
-            <div class="img" style="text-align: center;">
-                <a href="#calcular" style="text-align: center;">
-                    <img src="img/seta.png" style="text-align: center; height: 50px; margin-top: 50px;">
-                </a>
-            </div>
-        </div>
-    </section>
-    <section class="calcular" id="calcular">
-        <div class="title-calc">
-            <h1>Informe os números que deseja calcular:<br><br><br></h1>
-        </div>
-        <div class="result-line" style="align-items: center; text-align: center;">
-            <span></span>
-            <a>
-            <img src="img/enter.png" class="banana" onclick="result()">
-            </a>
-        </div>
-        <div class="button-numb" style="text-align: center; margin-bottom: 30px;">
-            <div class="button-n" style="text-align: center;">
-                <button class="btn-danger-n" onclick="show(0)">0</button>
-            </div>
-            <div class="button-n" style="text-align: center;">
-                <button class="btn-danger-n" onclick="show('1')">1</button>
-            </div>
-            <div class="button-n" style="text-align: center;">
-                <button class="btn-danger-n" onclick="show('2')">2</button>
-            </div>
-            <div class="button-n" style="text-align: center;">
-                <button class="btn-danger-n" onclick="show('3')">3</button>
-            </div>
-            <div class="button-n" style="text-align: center;">
-                <button class="btn-danger-n" onclick="show('4')">4</button>
-            </div>
-            <div class="button-n" style="text-align: center;">
-                <button class="btn-danger-n" onclick="show('5')">5</button>
-            </div>
-            <div class="button-n" style="text-align: center;">
-                <button class="btn-danger-n" onclick="show('6')">6</button>
-            </div>
-            <div class="button-n" style="text-align: center;">
-                <button class="btn-danger-n" onclick="show('7')">7</button>
-            </div>
-            <div class="button-n" style="text-align: center;">
-                <button class="btn-danger-n" onclick="show('8')">8</button>
-            </div>
-            <div class="button-n" style="text-align: center;">
-                <button class="btn-danger-n" onclick="show('9')">9</button>
-            </div>
-            <div class="button-n" style="text-align: center;">
-                <button class="btn-danger-n" onclick="show('.')">.</button>
-            </div>
-        </div>
-        <div class="button-cont" style="text-align: center;">
-            <div class="button" style="text-align: center;">
-                <button class="btn-danger" onclick="show('+')">+</button>
-            </div>
-            <div class="button" style="text-align: center;">
-                    <button class="btn-danger"onclick="show('-')">-</button>
-            </div>
-            <div class="button" style="text-align: center;">
-                    <button class="btn-danger" onclick="show('*')">x</button>
-            </div>
-            <div class="button" style="text-align: center;">
-                    <button class="btn-danger" onclick="show('/')">÷</button>
-            </div>
-            <div class="button" style="text-align: center;">
-                <button class="btn-danger" onclick="reset()" style="font-size: 13px; text-align: center;">RESET</button>
-            </div>
-        </div>
-    </section>
-</body>
-</html>
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400&display=swap');
+
+*{
+    margin: 0;
+    line-height: 30px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.header-site{
+    background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(img/capaaaam.jpg);
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    color: #ffffff;
+    padding-top: 250px;
+    padding-bottom: 155px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 50px;
+}
+
+.calcular{
+    background-color: #FFDE59;
+    padding-top: 180px;
+    padding-bottom: 140px;
+}
+
+#num{
+    border-radius: 20px;
+    width: 300px;
+}
+
+.title-calc{
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+    font-size: 30px;
+}
+
+.btn-danger{
+    background: #000000;
+	color: #ffffff;
+	border-style:solid;
+	border-color: #000000;
+	text-shadow: none;
+    font-family: 'Poppins', sans-serif;
+    font-size: 20px;
+    text-decoration: none;
+    padding: 7px;
+    text-align: center;
+    width: 70px;
+    margin-top: 20px 0;
+    line-height: 13pt;
+    margin-bottom: 10px;
+    display: inline-block;
+    cursor: pointer;
+    border-radius: 100px;
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+.btn-danger:hover {
+	background: #000000;
+	color: #ffffff;
+	border: 1px solid #000000;
+	box-shadow: 5px 3px 3px black;
+    text-decoration: none;
+}
+
+.button{
+    display: inline-block;
+}
+
+.button-n{
+    display: inline-block;
+}
+
+.btn-danger-n{
+    background: #FFDE59;
+	color: #000000;
+	border-style:solid;
+	border-color: #000000;
+	text-shadow: none;
+    font-family: 'Poppins', sans-serif;
+    font-size: 20px;
+    text-decoration: none;
+    padding: 7px;
+    text-align: center;
+    width: 70px;
+    margin-top: 20px 0;
+    line-height: 13pt;
+    margin-bottom: 10px;
+    display: inline-block;
+    cursor: pointer;
+    border-radius: 100px;
+    margin-right: 5px;
+    margin-left: 5px;
+}
+
+.btn-danger-n:hover {
+	background: #000000;
+	color: #ffffff;
+	border: 1px solid #000000;
+	text-shadow: none;
+    text-decoration: none;
+}
+
+span{
+    background: #FFDE59;
+	color: #000000;
+	border-style:solid;
+	border-color: #000000;
+	text-shadow: none;
+    font-family: 'Poppins', sans-serif;
+    font-size: 25px;
+    text-decoration: none;
+    padding: 7px;
+    width: 800px;
+    height: 30px;
+    cursor: pointer;
+    border-radius: 100px;
+    margin-right: 20px;
+    display: inline-block;
+}
+
+.result-line{
+    text-align: center;
+    align-items: center;
+    margin-bottom: 50px;
+    cursor: pointer;
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+}
+
+.banana{
+    width: 70px;
+    display: inline-block;
+}
+
+.banana:hover{
+    width: 80px;
+}
